@@ -12,6 +12,8 @@ class Student(Base):
     email = Column(String(), unique = True)
     grade = Column(Integer(), CheckConstraint("grade BETWEEN 1 AND 2"))
     birthday = Column(DateTime())
-    date_enrolled = Column(DateTime(), default = datetime.now())
+    date_joined = Column(DateTime(), default = datetime.now())
+    guardian_name = Column(String())
+    guardian_phone = Column(Integer())
     def __repr__(self):
         return f"Student {self.id} : {self.name} : Grade {self.grade}"
